@@ -28,6 +28,18 @@ DIGIT    [0-9]
                              printf("Print result of multiplication\n");
 					fprintf(yyout,"Print result of multiplication\n");
 					 }
+"echo("{DIGIT}+" mod "{DIGIT}+")""."    {  op1 = atoi(yytext);
+			         operand = 1;
+                           //printf("%d ",op1);
+                             printf("Print result of modulus\n");
+					fprintf(yyout,"Print result of modulus\n");
+					 }
+"echo("{DIGIT}+" ** "{DIGIT}+")""."    {  op1 = atoi(yytext);
+			         operand = 1;
+                           //printf("%d ",op1);
+                             printf("Print result of exponent\n");
+					fprintf(yyout,"Print result of exponent\n");
+					 }
 [a-zA-Z]+" := "[0-9]+"."      {printf("Value assign operator\n");
 					fprintf(yyout,"Value assign operator\n");
                             }
@@ -68,6 +80,8 @@ DIGIT    [0-9]
 			fprintf(yyout,"Logarithm function\n");}
 "exp"       {printf("Exp function\n");
 			fprintf(yyout,"Exp function\n");}
+"power"      {printf("Power function\n");
+			fprintf(yyout,"Power Function\n");}
 "root"      {printf("Square root\n");
 			fprintf(yyout,"Square root\n");}
 "flr"     {printf("Floor function\n");
