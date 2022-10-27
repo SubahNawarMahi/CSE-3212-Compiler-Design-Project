@@ -8,3 +8,16 @@ This is a multiple line comment
 
 Value assign operator
 
+This is iff condition
+ (a>b) This is then statement for if and elif condition
+ {
+bThis is assign operator
+30.
+aThis is assign operator
+b.
+}
+This is else condition
+e{
+aThis is assign operator
+10.
+}

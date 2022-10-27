@@ -6,3 +6,10 @@ echo(5 mul 2).
 echo(10 divide 2).
 scan()*$
 a := 67.
+iff (a>b) then {
+b:=30.
+a:=b.
+}
+else{
+a:=10.
+}

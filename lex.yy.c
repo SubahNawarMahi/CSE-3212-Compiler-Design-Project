@@ -708,7 +708,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 4 "1807006.l"
-{printf("#include \n");
+{printf("#include library \n");
 			fprintf(yyout,"#include \n");}
 	YY_BREAK
 case 2:
