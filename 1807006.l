@@ -1,7 +1,7 @@
 DIGIT    [0-9]
   int    op1,op2,operand=0;
 %%
-"#attach".* {printf("#include library \n");
+"#attach".* {printf("#include library\n");
 			fprintf(yyout,"#include \n");}
 
 "echo("{DIGIT}+" add "{DIGIT}+")""."    {  op1 = atoi(yytext);
@@ -48,9 +48,9 @@ DIGIT    [0-9]
                fprintf(yyout,"This is while loop\n");}
 "for_loop"   {printf("This is for loop\n");
                fprintf(yyout,"This is for loop\n");}
-"iff"    {printf("This is iff condition\n");
+"iff"" (".*") then{"(.|\n)*"}"    {printf("This is iff condition\n");
                fprintf(yyout,"This is iff condition\n");}
-"els"  {printf("This is else condition\n");
+"els""{"(.|\n)*"}"  {printf("This is else condition\n");
                fprintf(yyout,"This is else condition\n");}
 "elif"  {printf("This is else if condition\n");
                fprintf(yyout,"This is else if condition\n");}
