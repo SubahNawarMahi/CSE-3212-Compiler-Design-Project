@@ -1,0 +1,11 @@
+Integer type
+ variable _a1, variable a2, variable ar. 
+
+Floating type
+  variable _f1, variable f2, variable fr. 
+Integer type
+ array variable ara1[10] 
+,variable a3. 
+
+Value assignment in variable
+7678

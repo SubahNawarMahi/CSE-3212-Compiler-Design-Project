@@ -1,0 +1,4 @@
+Integer _a1,a2,ar.
+Float  _f1,f2,fr.
+Integer ara1[10],a3.
+_a1:=394839.7678

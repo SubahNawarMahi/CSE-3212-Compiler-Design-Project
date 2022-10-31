@@ -1,23 +1,171 @@
-#include 
+include library functions
+
+define
+  Character type
+  charr
+Integer type
+ variable a1_, 
+variable a2, 
+variable ar, 
+variable temp. 
+
+
+Floating type
+ variable f_1, 
+variable f2, 
+variable fr. 
+
+Bool type
+ variable f. 
+
+Integer type
+ variable _a31, 
+variable a23, 
+variable a3r. 
+
+
+Floating type
+  variable _f1, 
+variable f32, 
+variable fr33. 
+
+Integer type
+ array variable ara1[10] 
+,variable a3. 
+
+Character type
+    array variable va[70] 
+full stop for end statement
+
+
+Value assignment in variable
+
+
+Value assignment in variable
+
+arThis is assign operator
+a1_ addition operation
+ variable a2. 
+
+arThis is assign operator
+ a1_ logical and
+ variable a2. 
+
+tempThis is assign operator
+Power Function
+full stop for end statement
+
+tempThis is assign operator
+root(4)full stop for end statement
+
+tempThis is assign operator
+Floor function
+full stop for end statement
+
+tempThis is assign operator
+Ceil function
+full stop for end statement
+
+tempThis is assign operator
+Absolute function
+full stop for end statement
+
+tempThis is assign operator
+Logarithm function
+full stop for end statement
+
+tempThis is assign operator
+exp(5)full stop for end statement
+
+tempThis is assign operator
+Sine function
+full stop for end statement
+
+tempThis is assign operator
+Cosine function
+full stop for end statement
+
+tempThis is assign operator
+Tangent function
+full stop for end statement
+
+fThis is assign operator
+ 1This is greater than equal
+2full stop for end statement
+
+fThis is assign operator
+ 1This is equal
+2full stop for end statement
 
 This is a print command
 
 Print result of addition
 
-This is a multiple line comment
+Print result of subtraction
 
-Value assign operator
+Print result of multiplication
+
+Print result of division
+
+()
+
+This is a single line comment
+
+*$This is
+a multiplication operation
+tiple line
+comment 
+statement *$
+
+
+
+Value assignment in variable
 
 This is iff condition
- (a>b) This is then statement for if and elif condition
+This is then statement for if and elif condition
  {
-bThis is assign operator
-30.
+
+Value assignment in variable
+
 aThis is assign operator
-b.
+variable b. 
+
+}
+This is else if condition
+This is then statement for if and elif condition
+ {
+
+Value assignment in variable
+
 }
 This is else condition
-e{
-aThis is assign operator
-10.
+{
+
+Value assignment in variable
+
 }
+
+This is for loop
+(iThis is assign operator
+1 : iThis is less than equal
+10 : 1)
+{
+   variable brk. 
+
+}
+
+This is while loop
+
+{
+	break statement
+
+}
+This is function definition
+ sum(variable a, 
+b) Integer type
+ {
+Return statement
+ 0full stop for end statement
+
+}
+
