@@ -1,5 +1,6 @@
 #attach[stdio.h]
 #Suppose  Char  charr
+#Suppose Long Integer LLD
 Integer a1_,a2,ar,temp.
 Float f_1,f2,fr.
 Bool f.
@@ -7,22 +8,44 @@ Integer _a31,a23,a3r.
 Float  _f1,f32,fr33.
 Integer ara1[10],a3.
 Char    va[70].
-a1_:=10.
-a2:=50.
-ar:=a1_ add a2.
-ar:= a1_ AND a2.
-temp:=power(2,4).
-temp:=root(4).
-temp:=flr(4.5).
-temp:=ceil(5.5).
-temp:=abs(7.4).
-temp:=log(8.9).
-temp:=exp(5).
-temp:=sine(30).
-temp:=cosine(30).
-temp:=tan(30).
-f:= 1>=2.
-f:= 1=2.
+
+func sum(Integer a, Integer b.) :-> Integer {
+back a add b.
+}
+func compare(Float a, Float b, Float c.) :-> EmptyType {
+iff(a>b)then {
+iff(a>c)then {
+echo("a is the largest number.\n").
+}
+}
+elif(b>a)then {
+iff(b>c)then {
+echo("b is the largest number.\n").
+}
+}
+elif(c>a)then {
+iff(c>b)then {
+echo("c is the largest number.\n").
+}
+}
+}
+func main() :-> Integer {
+a1_ := 10.
+a2 := 50.
+ar := a1_ add a2.
+ar := a1_ AND a2.
+temp := power(2,4).
+temp := root(4).
+temp := flr(4.5).
+temp := ceil(5.5).
+temp := abs(7.4).
+temp := log(8.9).
+temp := exp(5).
+temp := sine(30).
+temp := cosine(30).
+temp := tan(30).
+f := 1>=2.
+f := 1=2.
 echo("Printing a statement").
 echo(5 add 2).
 echo(4 minus 2).
@@ -31,7 +54,7 @@ echo(10 divide 2).
 scan(45768).
 
 $$this is a single line comment
-*$This is
+$*This is
 a multiple line
 comment 
 statement *$
@@ -49,16 +72,31 @@ els{
 a:=10.
 }
 
-for_loop(i:=1 : i<=10 : 1)
+for_loop (i := 1 : i <= 10 : 1)
 {
    brk.
 }
 
-while_loop(i=9)
+while_loop (i >= 9)
 {
-	brk
+	brk.
 }
-func sum(a,b) Integer {
-back 0.
+while_loop (i = ar)
+{
+	brk.
 }
+
+while_loop (124)
+{
+	brk.
+}
+
+for_loop (i := 10 : i >= 0 : -1)
+{
+
+brk.
+
+}
+
+
 

@@ -2,7 +2,10 @@ include library functions
 
 define
   Character type
-  charr
+  
+define
+  Integer type
+ 
 Integer type
  variable a1_, 
 variable a2, 
@@ -38,64 +41,142 @@ Character type
 full stop for end statement
 
 
-Value assignment in variable
+This is function definition
+(Integer type
+ variable a, 
+ Integer type
+ variable b. 
+) :-> indicates return type
+ Integer type
+ This is left parenthesis
+
+Return statement
+  addition operation
+ variable b. 
+
+This is right parenthesis
+
+This is function definition
+(
+Floating type
+ variable a, 
+ 
+Floating type
+ variable b, 
+ 
+Floating type
+ variable c. 
+) :-> indicates return type
+  This is left parenthesis
+
+This is iff condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is iff condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is a print command
+
+This is right parenthesis
+
+This is right parenthesis
+
+This is else if condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is iff condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is a print command
+
+This is right parenthesis
+
+This is right parenthesis
+
+This is else if condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is iff condition
+This is then statement for if and elif condition
+ This is left parenthesis
+
+This is a print command
+
+This is right parenthesis
+
+This is right parenthesis
+
+This is right parenthesis
+
+This is function definition
+() :-> indicates return type
+ Integer type
+ This is left parenthesis
 
 
 Value assignment in variable
 
-arThis is assign operator
-a1_ addition operation
+
+Value assignment in variable
+
+ This is assign operator
+  addition operation
  variable a2. 
 
-arThis is assign operator
- a1_ logical and
+ This is assign operator
+  logical and
  variable a2. 
 
-tempThis is assign operator
-Power Function
+ This is assign operator
+ Power Function
 full stop for end statement
 
-tempThis is assign operator
-root(4)full stop for end statement
+ This is assign operator
+ ()full stop for end statement
 
-tempThis is assign operator
-Floor function
+ This is assign operator
+ Floor function
 full stop for end statement
 
-tempThis is assign operator
-Ceil function
+ This is assign operator
+ Ceil function
 full stop for end statement
 
-tempThis is assign operator
-Absolute function
+ This is assign operator
+ Absolute function
 full stop for end statement
 
-tempThis is assign operator
-Logarithm function
+ This is assign operator
+ Logarithm function
 full stop for end statement
 
-tempThis is assign operator
-exp(5)full stop for end statement
+ This is assign operator
+ ()full stop for end statement
 
-tempThis is assign operator
-Sine function
+ This is assign operator
+ Sine function
 full stop for end statement
 
-tempThis is assign operator
-Cosine function
+ This is assign operator
+ Cosine function
 full stop for end statement
 
-tempThis is assign operator
-Tangent function
+ This is assign operator
+ Tangent function
 full stop for end statement
 
-fThis is assign operator
- 1This is greater than equal
-2full stop for end statement
+ This is assign operator
+ This is greater than equal
+full stop for end statement
 
-fThis is assign operator
- 1This is equal
-2full stop for end statement
+ This is assign operator
+ This is equal
+full stop for end statement
 
 This is a print command
 
@@ -107,65 +188,94 @@ Print result of multiplication
 
 Print result of division
 
-()
+take input from user()full stop for end statement
+
 
 This is a single line comment
 
-*$This is
-a multiplication operation
-tiple line
-comment 
-statement *$
+Multiline comment starts
+Multiline comment Ends
 
 
 
-Value assignment in variable
+This is assign operator
+full stop for end statement
 
 This is iff condition
 This is then statement for if and elif condition
- {
+ This is left parenthesis
 
-Value assignment in variable
+This is assign operator
+full stop for end statement
 
-aThis is assign operator
+This is assign operator
 variable b. 
 
-}
+This is right parenthesis
+
 This is else if condition
 This is then statement for if and elif condition
- {
+ This is left parenthesis
 
-Value assignment in variable
+This is assign operator
+full stop for end statement
 
-}
+This is right parenthesis
+
 This is else condition
-{
+This is left parenthesis
 
-Value assignment in variable
+This is assign operator
+full stop for end statement
 
-}
+This is right parenthesis
+
 
 This is for loop
-(iThis is assign operator
-1 : iThis is less than equal
-10 : 1)
-{
+
+This is left parenthesis
+
    variable brk. 
 
-}
+This is right parenthesis
+
 
 This is while loop
 
-{
-	break statement
+This is left parenthesis
 
-}
-This is function definition
- sum(variable a, 
-b) Integer type
- {
-Return statement
- 0full stop for end statement
+	variable brk. 
 
-}
+This is right parenthesis
+
+This is while loop
+
+This is left parenthesis
+
+	variable brk. 
+
+This is right parenthesis
+
+
+This is while loop
+
+This is left parenthesis
+
+	variable brk. 
+
+This is right parenthesis
+
+
+This is for loop
+
+This is left parenthesis
+
+
+variable brk. 
+
+
+This is right parenthesis
+
+
+
 
