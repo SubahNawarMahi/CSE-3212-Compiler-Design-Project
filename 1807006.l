@@ -1,7 +1,8 @@
 DIGIT    [0-9]
 Expr     [A-Za-z_!@#$%&*]+.*
 Variable [A-Za-z_]+[A-Za-z_0-9]*
-
+Condition (" < "|" <= "|" > "|" >= "|" =! "|" = ")
+Floating        [0-9]+[.][0-9]+
     
 %{
 
@@ -16,57 +17,46 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
 "#Suppose" 		     	 				{printf("#define\n");
 									fprintf(yyout,"define\n");}
 
-"echo("{DIGIT}+" add "{DIGIT}+")""."            {  op1 = atoi(yytext);
-			                              operand = 1;
-                                               //printf("%d ",op1);
+
+
+
+
+"echo("{DIGIT}+" add "{DIGIT}+")""."            {  
                                                 printf("Print result of addition\n");
 					                 fprintf(yyout,"Print result of addition\n");
 					                  }
-"echo("{DIGIT}+" minus "{DIGIT}+")""."          {  op1 = atoi(yytext);
-			         				operand = 1;
-                          				 //printf("%d ",op1);
+"echo("{DIGIT}+" minus "{DIGIT}+")""."          {  
                             				 printf("Print result of subtraction\n");
 								fprintf(yyout,"Print result of subtraction\n");
 								 }
-"echo("{DIGIT}+" divide "{DIGIT}+")""."   	 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           					//printf("%d ",op1);
+"echo("{DIGIT}+" divide "{DIGIT}+")""."   	 {  
                            			  printf("Print result of division\n");
 							fprintf(yyout,"Print result of division\n");
 							 }
-"echo("{DIGIT}+" mul "{DIGIT}+")""."   		 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           				//printf("%d ",op1);
+"echo("{DIGIT}+" mul "{DIGIT}+")""."   		 {  
                             				 printf("Print result of multiplication\n");
 								fprintf(yyout,"Print result of multiplication\n");
 								 }
-"echo("{DIGIT}+" mod "{DIGIT}+")""."   		 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           				//printf("%d ",op1);
+"echo("{DIGIT}+" mod "{DIGIT}+")""."   		 { 
                             				 printf("Print result of modulus\n");
 								fprintf(yyout,"Print result of modulus\n");
 								 }
-"echo("{DIGIT}+" ** "{DIGIT}+")""."   		 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           				//printf("%d ",op1);
+"echo("{DIGIT}+" ** "{DIGIT}+")""."   		 { 
                             				 printf("Print result of exponent\n");
 								fprintf(yyout,"Print result of exponent\n");
 								 }
-"echo("{DIGIT}+" AND "{DIGIT}+")""."   		 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           				//printf("%d ",op1);
+"echo("{DIGIT}+" AND "{DIGIT}+")""."   		 {  
                             				 printf("Print result of LOGICAL AND\n");
 								fprintf(yyout,"Print result of LOGICAL AND\n");
 								 }
-"echo("{DIGIT}+" OR "{DIGIT}+")""."   		 {  op1 = atoi(yytext);
-			         				operand = 1;
-                           				//printf("%d ",op1);
+"echo("{DIGIT}+" OR "{DIGIT}+")""."   		 {  
                             				 printf("Print result of LOGICAL OR\n");
 								fprintf(yyout,"Print result of LOGICAL OR\n");
 								 }
 
 
-"scan"                                          {printf("take input from the user");}
+"scan"                                          {printf("take input from the user");
+							fprintf(yyout,"take input from user");}
 
 
 "Integer"                          			{printf("\nInteger type\n");
@@ -100,34 +90,64 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
                            				 }
 
 
-{Variable}":="[0-9]+"."      			    {printf("\nValue assignment in variable\n");
+{Variable}" := "[0-9]+"."      			    {printf("\nValue assignment in variable\n");
 								fprintf(yyout,"\nValue assignment in variable\n");
                            				 }
 "echo(".*   						 {fprintf(yyout,"This is a print command\n");
             						  printf("This is a print command\n");}
-"$*"(.|\n)*"*$"   				    {printf("This is a multiple  line comment\n");
-              						 fprintf(yyout,"This is a multiple line comment\n");}
+
+"$*"                             {
+						printf("Multiline comment starts\n");
+						fprintf(yyout,"Multiline comment starts\n");
+                                    char g;
+                                    label:
+                                   while(g = input() != '*');
+                                   if(g = input() == '$') {
+                                   printf("Multiline Comment Ends.\n");
+						fprintf(yyout,"Multiline comment Ends\n");
+                                  } else {
+                                 goto label;
+                                  }
+                                  }
+
 "$$".*      							 {printf("This is a single line comment\n");
              						  fprintf(yyout,"This is a single line comment\n");}
+"{"							{printf("This is left parenthesis\n");
+           						    fprintf(yyout,"This is left parenthesis\n");}
 
+"}"							{printf("This is right parenthesis\n");
+           						    fprintf(yyout,"This is right parenthesis\n");}
+":->"                                {printf(":-> indicates return type\n");
+							fprintf(yyout,":-> indicates return type\n");
+							} 
 
 ":="    							{printf("This is assign operator\n");
            						    fprintf(yyout,"This is assign operator\n");}
 ">="   						 {printf("This is greater than equal\n");
             					   fprintf(yyout,"This is greater than equal\n");}
-"<="    						{fprintf(yyout,"This is less than equal\n");}
+"<="    						{fprintf(yyout,"This is less than equal\n");
+								printf("This is less than equal\n");}
 
 "=!"   						 {printf("This is not equal\n");
          					      fprintf(yyout,"This is not equal\n");}
 "="   						 {printf("This is equal\n");
          					      fprintf(yyout,"This is equal\n");}
+"handle"						{printf("This is switch\n");
+         					      fprintf(yyout,"This is switch\n");}
+"type"						{printf("case\n");
+         					      fprintf(yyout,"case\n");}
+"otherwise"						{printf("default\n");
+         					      fprintf(yyout,"default\n");}
 
-"while_loop""(".*")"					 {printf("This is while loop\n");
-               					fprintf(yyout,"This is while loop\n");}
+"while_loop ("{Variable}(" < "|" <= "|" > "|" >= "|" =! "|" = ")({DIGIT}+|{Variable})")"					 {printf("This is while loop\n");
+               															fprintf(yyout,"This is while loop\n");}
 
-"for_loop"   {printf("This is for loop\n");
+"while_loop ("{DIGIT}+")"														{printf("This is while loop\n");
+               															fprintf(yyout,"This is while loop\n");}
 
-							                                           fprintf(yyout,"This is for loop\n");}
+"for_loop ("{Variable}" := "{DIGIT}+" : "{Variable}(" < "|" <= "|" > "|" >= "|" =! "|" = "){DIGIT}+" : ""-"?{DIGIT}+")"    {printf("for loop matched\n");
+																			fprintf(yyout,"This is for loop\n");}
+
 "brk"				{printf("break statement\n");
               				 fprintf(yyout,"break statement\n");}
                                                      
@@ -135,15 +155,16 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
 						//printf(yytext);
                					fprintf(yyout,"This is iff condition\n");}
 
-"els"	  			{printf("This is else condition\n");
+"els"	  			        {printf("This is else condition\n");
               				 fprintf(yyout,"This is else condition\n");}
-"elif(".*")" 	{printf("This is else if condition\n");
+"elif(".*")" 	               {printf("This is else if condition\n");
               				 fprintf(yyout,"This is else if condition\n");}
 "then" 				 {printf("This is then statement for if and elif condition\n");
              			  fprintf(yyout,"This is then statement for if and elif condition\n");}
 
-"func"     			{printf("Function definition\n");
+"func"" "{Variable}                                       {printf("Function definition\n");
               				 fprintf(yyout,"This is function definition\n");}
+
 "back"                 {printf("Return statement\n");
               				 fprintf(yyout,"Return statement\n");
 						}
@@ -157,6 +178,8 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
 					fprintf(yyout,"division operation\n");}
 "**"   				{printf("exponent operation\n");
 					fprintf(yyout,"exponent operation\n");}
+"mod"   				{printf("modulus operation\n");
+					fprintf(yyout,"modulus operation\n");}
 "AND"   				{printf("Logical and\n");
 					fprintf(yyout,"logical and\n");}
 "OR"   			 {printf("Logical or\n");
@@ -175,7 +198,7 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
 "power""("{DIGIT}+","{DIGIT}")"     		 {printf("Power function\n");
 					fprintf(yyout,"Power Function\n");}
 "root""("{DIGIT}+.?{DIGIT}")"      		{printf("Square root\n");
-				fprintf(yyout,"Square root\n");}
+				           fprintf(yyout,"Square root\n");}
 "flr""("{DIGIT}+.?{DIGIT}")"     			{printf("Floor function\n");
 					fprintf(yyout,"Floor function\n");}
 "ceil""("{DIGIT}+.?{DIGIT}")"     			 {printf("Ceil function\n");
@@ -192,6 +215,10 @@ Variable [A-Za-z_]+[A-Za-z_0-9]*
 				fprintf(yyout,"Tangent function\n");}
 
 
+{Variable}                                                        { printf("VARIABLE\n"); }
+{Floating}                                                          { printf("Floating Point Value\n"); }
+{DIGIT}                                                             { printf("Digit\n"); }
+
 %%
 
 int yywrap()
@@ -204,7 +231,7 @@ int main()
 extern FILE *yyin, *yyout;
 yyin = fopen ("input.txt","r");
 yyout = fopen("output.txt","w");
-//yyin = fopen ("var.txt","r");
+//yyin = fopen ("var3.txt","r");
 //yyout = fopen("var2.txt","w");
 
 yylex();
