@@ -117,7 +117,7 @@ int assign(char *s)
 %type <ei> id
 %type <ei> EOL
 %type <ei> statement
-%token INT FLOAT DOUBLE CHAR BOOL INC DEC EOL FOB FCB FACTORIAL POWER VOID EXIT PI WHILE FOR IF ELSEIF ELSE THEN PRINT SCAN SWITCH CASE DEFAULT ASSIGN LOG10 LN EXP SQRT FLOOR CEIL ABS SIN ASIN COS ACOS TAN ATAN BREAK INCLUDE HEADER FUNC 
+%token INT FLOAT DOUBLE CHAR BOOL START INC DEC EOL FOB FCB FACTORIAL POWER VOID EXIT PI WHILE FOR IF ELSEIF ELSE THEN PRINT SCAN SWITCH CASE DEFAULT ASSIGN LOG10 LN EXP SQRT FLOOR CEIL ABS SIN ASIN COS ACOS TAN ATAN BREAK INCLUDE HEADER FUNC 
 
 %nonassoc IFX
 %nonassoc ELSEIF
@@ -132,9 +132,30 @@ int assign(char *s)
 %%
 
 program:
-	include '{' lines '}'	{printf("\n Program executed successfully\n");}
+	include function START '{' lines '}'	{printf("\n Program executed successfully\n");}
 	|
 	;
+function:
+
+	| FUNC VARIABLE FOB parameters FCB '{' lines '}'	{
+												printf("\nFunction Declared\n");}
+	;
+parameters:
+		|parameters ',' VARIABLE		{ 
+									if(func_here($3)==1)
+									 printf("\n parameter already exists!\n");
+									else
+									 assign_func($3);
+								}
+		| VARIABLE 			{ 
+								if(func_here($1)==1)
+									printf("\nparameter already exists!\n");
+								else
+									 assign_func($1);
+
+								
+							}
+		;
 include:
 	INCLUDE '[' HEADER ']' {printf("\nheader found\n");}
 	|
@@ -164,6 +185,7 @@ id	:
 						assign($3);
 
 				}
+	
 	| VARIABLE	{
 				if(isdeclared($1)==1)
 						printf("\nDouble declaration!");
@@ -191,6 +213,7 @@ id	:
 
 statement	:
 		EOL
+		| declaration
 		| expression EOL	{$$=$1;}
 		| PRINT FOB VARIABLE FCB EOL	{
 								if(isdeclared($3)==0)
@@ -206,6 +229,7 @@ statement	:
 								$$=c;
 								printf("\n%d\n",c);
 								}
+		|PRINT FOB STRING FCB EOL 	{ printf("\n%s\n",$3);}
 		| VARIABLE ASSIGN expression EOL {
 								if(setval($1,$3)==0)
 								{
@@ -484,7 +508,7 @@ expression	:	NUMBER	{$$ = $1;}
 				//printf("value of a %lf\n",a);
 				//printf("value of a %lf\n",yylval.floating);
 				
-				printf("sine value of %d is %lf\n",$2,cos($2*3.1416/180));
+				printf("cosine value of %d is %lf\n",$2,cos($2*3.1416/180));
 				$$=cos($2*3.1416/180);}
 		| TAN expression   {	double a;
 				//scanf("%lf",&a);
@@ -492,7 +516,7 @@ expression	:	NUMBER	{$$ = $1;}
 				//printf("value of a %lf\n",a);
 				//printf("value of a %lf\n",yylval.floating);
 				
-				printf("sine value of %d is %lf\n",$2,tan($2*3.1416/180));
+				printf("tangent value of %d is %lf\n",$2,tan($2*3.1416/180));
 				$$=tan($2*3.1416/180);}
 		|  LOG10 expression   {	double a;
 				//scanf("%lf",&a);

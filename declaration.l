@@ -55,7 +55,8 @@ EXPO      [Ee][-+]?[0-9]+
 "Bool"       return BOOL;
 "EmptyType"  return VOID;
 "."           return EOL;
-
+"Start_From_Here"				{	printf("\nMain function starts from here\n");;
+							return START;}
 "func"      return FUNC;
 
 "("         return FOB; 
@@ -94,6 +95,7 @@ EXPO      [Ee][-+]?[0-9]+
 "AND"   return AND;
 "OR"    return OR;
 "NOT"   return NOT;
+"XOR"   return XOR;
 "power"     return POWER;
 "echo" return PRINT;
 "scan"  return SCAN;
@@ -115,6 +117,9 @@ EXPO      [Ee][-+]?[0-9]+
 "acosise"      return ACOS;
 "tan"       return TAN;
 "atan"      return ATAN;
+"handle"	return SWITCH;
+"type"	return CASE;
+"otherwise"	return DEFAULT;
    
 [a-zA-Z_][a-z0-9A-Z_]* {
     yylval.varName = strdup(yytext);
@@ -132,8 +137,8 @@ EXPO      [Ee][-+]?[0-9]+
 int main()
 {
 	printf("RUN SUCCESSFULLY : \n");
-	//freopen("input.txt","r",stdin);
-	//freopen("output.txt","w",stdout);
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
 	/*yyin = fopen("a.txt","r");*/
 	yyparse();
 	return 0;
