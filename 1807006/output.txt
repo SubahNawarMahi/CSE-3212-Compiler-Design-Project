@@ -1,0 +1,501 @@
+
+header found
+Single-line comment
+the variable is hello_world
+
+hello world
+
+Function Declared
+
+the variable is sum
+
+the variable is x
+ 10.000000
+ 20.000000
+Sum=
+
+30
+
+Function Declared
+
+Main function starts from here
+Single-line comment
+Declaration and assignment of various data type
+
+Integer Type declaration
+
+the variable is ds
+ 100.000000
+
+init called
+
+the variable is asd
+
+the variable is _a
+
+the variable is a
+
+the variable is b
+
+the variable is c
+
+Valid declaration
+
+the variable is ds
+
+Value of the variable ds:  100	
+
+Float Type declaration
+
+the variable is f1
+ 23.000000
+
+init called
+
+the variable is f2
+
+the variable is f3
+
+Valid declaration
+
+the variable is f1
+
+Value of the variable f1:  23	
+
+the variable is f2
+
+Value of the variable f2:  0	
+
+Double Type declaration
+
+the variable is d
+
+the variable is f
+
+the variable is g
+
+Valid declaration
+
+Bool Type declaration
+
+the variable is sd
+
+the variable is df
+
+Valid declaration
+
+the variable is asd
+ 12.000000
+
+the variable is a
+ 2.000000
+
+the variable is b
+ 3.000000
+
+Array Declaration and assignment
+
+Integer Type declaration
+
+the variable is ara1
+ 5.000000
+
+Array declaration Successful
+
+Float Type declaration
+
+the variable is fara1
+ 5.000000
+
+Array declaration Successful
+Single-line comment
+Array assignment and value print
+
+ ara1[0]:= 
+ 1.000000
+
+ ara1[1]:= 
+ 2.000000
+
+ ara1[2]:= 
+ 3.000000
+
+ ara1[3]:= 
+ 4.000000
+
+Mathematical Expressions
+
+the variable is c
+
+the variable is a
+
+the variable is b
+Sum=
+
+the variable is c
+
+Value of the variable c:  5	
+
+2 add 3 add 4 --->
+ 2.000000
+ 3.000000
+Sum=
+ 4.000000
+Sum=
+
+9
+
+2 add 3 minus 4 --->
+ 2.000000
+ 3.000000
+Sum=
+ 4.000000
+Subtraction=1
+
+1
+
+4 add 6 mul 3 --->
+ 4.000000
+ 6.000000
+ 3.000000
+Multiplication=18
+Sum=
+
+22
+
+4 minus 6 mul 3 --->
+ 4.000000
+ 6.000000
+ 3.000000
+Multiplication=18
+Subtraction=-14
+
+-14
+
+3 add 4 mul 5 add 6---->
+ 3.000000
+ 4.000000
+ 5.000000
+Multiplication=20
+Sum=
+ 6.000000
+Sum=
+
+29
+
+the variable is a
+ 14.000000
+
+the variable is b
+ 5.000000
+
+the variable is c
+
+the variable is a
+
+the variable is b
+Subtraction=9
+
+the variable is c
+
+Value of the variable c:  9	
+
+the variable is a
+ 2.000000
+
+the variable is b
+ 3.000000
+
+the variable is c
+
+the variable is a
+
+the variable is b
+Multiplication=6
+
+the variable is c
+
+Value of the variable c:  6	
+
+the variable is a
+ 6.000000
+
+the variable is b
+ 3.000000
+
+the variable is c
+
+the variable is a
+
+the variable is b
+Division=
+
+the variable is c
+
+Value of the variable c:  2	
+
+the variable is a
+ 2.000000
+
+the variable is b
+ 0.000000
+
+the variable is c
+
+the variable is a
+
+the variable is b
+
+Division by zero
+
+the variable is c
+
+Value of the variable c:  2	
+
+the variable is a
+ 3.000000
+
+the variable is b
+ 2.000000
+
+the variable is c
+
+the variable is a
+
+the variable is b
+Modulus=1
+
+the variable is c
+
+Value of the variable c:  1	
+Single-line comment
+the variable is sum
+function (sum) is called
+the variable is sum
+
+the variable is x
+ 10.000000
+ 20.000000
+Sum=
+
+30
+Mathematical Functions
+Single-line comment
+the variable is c
+ 5.700000
+value of a 5.700000
+floor value is 5.000000
+
+the variable is c
+
+Value of the variable c:  5	
+
+the variable is c
+ 5.700000
+value of a 5.700000
+ceil value is 6.000000
+
+the variable is c
+
+Value of the variable c:  6	
+
+the variable is c
+ 5.700000
+value of a 5.700000
+Absolute value is 5
+
+the variable is c
+
+Value of the variable c:  5	
+
+the variable is c
+ 3.000000
+Value of Factorial is: 6
+
+Printing value of factorial
+
+the variable is c
+
+Value of the variable c:  6	
+ 30.000000
+sine value of 0 is 0.500001
+ 30.000000
+cosine value of 0 is 0.866025
+ 30.000000
+tangent value of 0 is 0.577352
+ 0.500000
+asine/Inverse of sine value of 0 in degree is 29.999930
+ 0.500000
+acosine/Inverse of cosine value of 0 in degree is 59.999860
+ 1.000000
+Inverse of tangent value of 0 in degree is 44.999895
+ 16.000000
+value of a 16.000000
+square root value is 4.000000
+ 2.000000
+ 4.000000
+2^4 value is 16
+ 1000.000000
+LOG10 value of 0 is 3.000000
+ 5.000000
+ln value of 0 is 1.609438
+
+Conditional operators
+
+the variable is c
+ 5.000000
+ 4.000000
+
+the variable is c
+
+Value of the variable c:  1	
+
+the variable is c
+ 5.000000
+ 4.000000
+
+the variable is c
+
+Value of the variable c:  0	
+
+the variable is c
+ 5.000000
+ 4.000000
+
+the variable is c
+
+Value of the variable c:  0	
+
+Logical operators
+
+Printing value of AND operation
+
+the variable is a
+
+the variable is b
+
+1
+
+Printing value of OR operation
+
+the variable is a
+
+the variable is b
+
+1
+
+Printing value of XOR operation
+
+the variable is a
+
+the variable is b
+
+1
+
+Printing value of NOT operation
+
+the variable is a
+
+0
+Multiline comment starts
+Multiline Comment Ends.
+
+the variable is asd
+
+Value of the variable asd:  12	
+
+If else conditional Statement
+
+the variable is b
+ 20.000000
+
+the variable is c
+ 2.000000
+
+the variable is a
+
+the variable is b
+
+Condition is not true; Inside Else-if block
+
+the variable is a
+
+the variable is c
+
+condition for else if statement is checking
+
+Condition is not true; Inside Else block
+
+condition for else statement is true
+
+For loop Increment
+
+the variable is a
+ 1.000000
+
+the variable is a
+ 5.000000
+
+the variable is a
+ 2.000000
+for loop increasing 1
+for loop increasing 3
+for loop increasing 5
+
+
+For loop Decrement
+
+the variable is a
+ 10.000000
+
+the variable is a
+ 4.000000
+
+the variable is a
+ 2.000000
+for loop Decreasing 10
+for loop Decreasing 8
+for loop Decreasing 6
+for loop Decreasing 4
+
+
+While loop
+
+the variable is b
+ 0.000000
+
+the variable is b
+ 6.000000
+ 2.000000
+While loop is executing value of variable b : 2
+While loop is executing value of variable b : 4
+While loop is executing value of variable b : 6
+ 0.000000
+Condition always false,While loop won't be executed
+ 1.000000
+Condition always true,Infinity While loop is executing
+
+Switch Case
+Single-line comment
+Integer Type declaration
+
+the variable is option
+
+Valid declaration
+
+the variable is option
+ 12.000000
+
+the variable is option
+ 4.000000
+ 4.000000
+Condition of current case doesn't match.
+ 12.000000
+ 12.000000
+Case matched.
+Value of expression in current case 12.0000
+Condition already fulfilled.Ignoring default option.
+
+Switch Case matched
+
+ Program executed successfully

@@ -1,0 +1,198 @@
+#attach[header.h]
+$$Global function declare
+func hello_world(){
+echo("hello world").
+}
+
+func sum(x)
+{
+echo(10 add 20).
+	
+}
+
+
+
+Start_From_Here
+{
+
+$$ Single Line comment
+
+echo("Declaration and assignment of various data type").
+
+Integer ds := 100 ,asd,_a,a,b,c.
+echo(ds).
+Float f1 := 23 , f2,f3.
+echo(f1).
+echo(f2).
+
+Double d,f,g.
+Bool sd,df.
+asd := 12 .
+a := 2 .
+b := 3 .
+
+echo("Array Declaration and assignment").
+ara Integer ara1[5].
+ara Float fara1[5].
+
+$$kaaj kori nai ara1[0] := 1 , ara1[1] := 2 , ara1[2] := 3 , ara1[3] := 4 . 
+echo("Array assignment and value print").
+ara1[0]:= 
+1
+.
+ara1[1]:= 
+2
+.
+ara1[2]:= 
+3
+.
+ara1[3]:= 
+4
+.
+echo("Mathematical Expressions").
+c := a add b .
+echo(c).
+echo("2 add 3 add 4 --->").
+echo(2 add 3 add 4).
+echo("2 add 3 minus 4 --->").
+echo(2 add 3 minus 4).
+echo("4 add 6 mul 3 --->").
+echo(4 add 6 mul 3).
+echo("4 minus 6 mul 3 --->").
+echo(4 minus 6 mul 3).
+echo("3 add 4 mul 5 add 6---->").
+echo(3 add 4 mul 5 add 6).
+a := 14 .
+b := 5 .
+c := a minus b .
+echo(c).
+a := 2 .
+b := 3 .
+c := a mul b .
+echo(c).
+a := 6 .
+b := 3 .
+c := a divide b .
+echo(c).
+a := 2 .
+b := 0 .
+c := a divide b .
+echo(c).
+a := 3 .
+b := 2 .
+c := a mod b .
+echo(c).
+$$scan(45).
+func sum().
+
+echo("Mathematical Functions").
+$$flr(4.67).
+c := flr(5.7).
+echo(c).
+c := ceil(5.7).
+echo(c).
+c := abs(5.7).
+echo(c).
+
+c := 3! .
+echo("Printing value of factorial").
+echo(c).
+sine(30).
+cosine(30).
+tan(30).
+asine(0.5).
+acosine(0.5).
+atan(1).
+root(16).
+power(2,4).
+log10(1000).
+ln(5).
+
+echo("Conditional operators").
+c := 5 > 4 .
+echo(c).
+c := 5 <= 4 .
+echo(c).
+
+c := 5 = 4 .
+echo(c).
+
+echo("Logical operators").
+echo("Printing value of AND operation").
+echo( a AND b) .
+echo("Printing value of OR operation").
+echo( a OR b) .
+echo("Printing value of XOR operation").
+echo( a XOR b) .
+echo("Printing value of NOT operation").
+echo( NOT a) .
+
+$* This is a  
+Multi line 
+comment 
+this is my project*$
+
+echo(asd).
+
+
+echo("If else conditional Statement").
+b := 20 .
+c := 2 .
+iff(a>b) then {
+.
+}
+elif(a<c) then {
+
+.
+}
+els{
+.
+}
+
+echo("For loop Increment").
+
+for_loop ( a := 1 : a <= 5 : a inc 2 ) 
+{ 
+}
+
+echo("For loop Decrement").
+
+for_loop ( a := 10 : a >= 4 : a dec 2 ) 
+{ 
+}
+
+echo("While loop").
+b := 0 .
+while_loop ( b <= 6 : 2 )
+{
+}
+while_loop ( 0 )
+{
+}
+while_loop ( 1 )
+{
+}
+
+echo("Switch Case").
+$$ Switch Case start
+Integer option.
+option := 12 .
+handle ( option ) {
+
+type 4 :
+4
+.
+brk
+type 12 :
+12
+.
+brk
+otherwise :
+.
+brk
+
+
+}
+exit
+
+}
