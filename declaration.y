@@ -14,6 +14,8 @@ int type_of_id[1000];
 int last_point=1,f=1;
 //condition for if else
 int match_condition;
+//switch case handle
+double switchValue;
 //fucntion parameter
 char parameterar[100][100];
 int cnt_func = 1;
@@ -115,7 +117,7 @@ int assign(char *s)
 %type <ei> id
 %type <ei> EOL
 %type <ei> statement
-%token INT FLOAT DOUBLE CHAR BOOL INC DEC EOL FOB FCB FACTORIAL POWER VOID EXIT PI WHILE FOR IF ELSEIF ELSE THEN PRINT SCAN ASSIGN LOG10 LN EXP SQRT FLOOR CEIL ABS SIN ASIN COS ACOS TAN ATAN BREAK INCLUDE HEADER FUNC 
+%token INT FLOAT DOUBLE CHAR BOOL INC DEC EOL FOB FCB FACTORIAL POWER VOID EXIT PI WHILE FOR IF ELSEIF ELSE THEN PRINT SCAN SWITCH CASE DEFAULT ASSIGN LOG10 LN EXP SQRT FLOOR CEIL ABS SIN ASIN COS ACOS TAN ATAN BREAK INCLUDE HEADER FUNC 
 
 %nonassoc IFX
 %nonassoc ELSEIF
@@ -143,17 +145,16 @@ lines :
 	| declaration
 	; 
 declaration :
-	type id EOL	{printf("\Valid declaration\n");}
+	type id EOL	{printf("\nValid declaration\n");}
 
 	;
 type	:
-	INT
-	| FLOAT
-	| DOUBLE
-	| CHAR
-	| STRING
-	| BOOL
-	| VOID
+	INT			{printf("\nInteger Type declaration\n");}
+	| FLOAT		{printf("\nFloat Type declaration\n");}
+	| DOUBLE		{printf("\nDouble Type declaration\n");}
+	| CHAR		{printf("\nChar Type declaration\n");}
+	| BOOL		{printf("\nBool Type declaration\n");}
+	| VOID		{printf("\nVoid Type declaration\n");}
 	;
 id	:
 	id ',' VARIABLE	{
@@ -249,6 +250,7 @@ statement	:
 			
 		}
 	| if_statements	{ match_condition=0;}
+	| switch_statements	{}
 
 		;
 if_statements:
@@ -280,6 +282,7 @@ last_else:
 										//printf("Value of expression in else block is %.0lf\n",$3);
 									}
 								}
+		;
 
 
 elif_statement:
@@ -302,7 +305,54 @@ last_elif:
 												     {printf("\nCondition is not true; Inside Else block\n");}
 												}
 											}
-														
+		;
+switch_statements:	SWITCH FOB switch_variable FCB '{' cases '}'	{	printf("\nSwitch Case matched\n");
+														match_condition=0;} 		
+				;
+switch_variable: VARIABLE		{
+						if( isdeclared($1) == 0)
+						{
+							//$$=0;
+							printf("\nNot declared\n");
+						}
+						else
+						{  
+							//$$=store[getval($1)];
+							switchValue=store[getval($1)];}
+					}
+		;
+cases:	caselist default
+		|default
+		;
+default:	DEFAULT ':' statement BREAK	{
+						if(match_condition){
+						 printf("Condition already fulfilled.Ignoring default option.\n");}
+						else{
+						 printf(" No match found.Executing default option.\n");}
+					}
+		;
+caselist:	caselist case
+		| case
+		;
+case: CASE expression ':' statement BREAK	{
+									if(match_condition){
+                        			printf("Condition already fulfilled.Ignoring current option\n");
+                       						 }
+                    else{
+                        int isTrue = (fabs($2-switchValue)<1e-9);
+                            if(isTrue){
+                                printf("Case matched.\n");
+                                printf("Value of expression in current case %.4lf\n",$2);
+                                match_condition = 1;
+                            }
+                            else{
+                                
+                                printf("Condition of current case doesn't match.\n");
+                              
+                            }
+								}
+					}
+			;									
 
 expression	:	NUMBER	{$$ = $1;}
 		| VARIABLE		{
