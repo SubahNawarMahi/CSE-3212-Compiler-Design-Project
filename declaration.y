@@ -296,10 +296,12 @@ last_elif:
 												//printf("Value of expression in else block is %.0lf\n",$3);
 													
 													if((int)$3)
-													{printf("\nCondition is true; Inside Else-If block\n");}
+													{printf("\nCondition is true; Inside Else-If block\n");
+														match_condition=1;}
 												else
-												     printf("\nCondition is not true; Inside Else block\n");	
+												     {printf("\nCondition is not true; Inside Else block\n");}
 												}
+											}
 														
 
 expression	:	NUMBER	{$$ = $1;}
